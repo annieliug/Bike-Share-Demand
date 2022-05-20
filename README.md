@@ -1,6 +1,6 @@
 # Bike Share Demand - Project 3
 
-![action](./images/banner.jpg)
+![bike](./images/bike.jpg)
 
 **Author**: Annie Liu
 
