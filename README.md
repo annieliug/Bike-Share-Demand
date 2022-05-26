@@ -15,6 +15,7 @@ From this, we put forward the following recommendations to CTS to consider when 
 
 * Temp and atemp have a high corrleation with bike rental counts, CTS could assess climate data from previous years to predict temp and bike rental demand for the future. Similarly, to the above proposed, more transport options available during cold days (and vice versa).
  
+We use OSL regression model to predict the number of bikes rented.
 
 ## Business Problem
 
@@ -24,7 +25,7 @@ Due to CTS having limited knowledge of bike rental demand, we ask the following 
 Questions considered:
 * What are the business's pain points related to this project?
 
-CTS have limited knowledge of bike rental demand in the city. We assessed various attributes in particular season, weathersit and temp/atemp to aid us in solving this.
+CTS have limited knowledge of bike rental demand in the city. We assessed various attributes in particular season, weathersit and temp/atemp to aid us in solving which variables significantly impact bike rental demand.
 
 * How did you pick the data analysis question(s) that you did?
 
@@ -32,12 +33,12 @@ Season, weathersit and temp/atemp all seem like reasonable factors that could im
 
 * Why are these questions important from a business perspective?
 
-By answering these questions, CTS can make better assumptions on how to control transport means and resources, when to supply more or less and how to efficently run operations within the city transport network.
+By answering these questions, CTS can make better assumptions on how to control transport means and resources, when to supply more or less and how to efficiently run operations within the city transport network.
 ***
 
 ## Data
 
-One dataset 'day.csv' which includes the record index of all bike rentals between 2011-2012 and the attributes, was used for this analysis.
+One daily dataset 'day.csv’ from the Capital bikeshare system with corresponding weather and seasonal information from 2011-2012 was used for this analysis.
 
 ***
 
@@ -78,6 +79,8 @@ Rentals seem to be highest during 'good' weather conditions (Clear with few clou
 Temp and atemp whilst not a perfect correlation with bike rental counts, there certainly is a relatively strong relationship. 
 
 Therefore, we generalize that season, weather conditions and temp/atemp can influence rental count.
+
+After trialing various models, model 27 is a very good predictor. Our models passed all the validation tests. Thus, it is clear that by applying the 11 independent variables, our model can forecast bike rentals. However, our model only has an R2 value of 64%, implying that there are approximately 36% unknown factors influencing bike rentals. This can be further improved by using other regression techniques and other types of data.
 
 Our generalizations have good grounding based off the 2011-2012 data, therefore can aid to enabling CTS to make better informed forecasting and decisions.
 We have used data that had no duplicates and null or missing values and little outliers, so our data can be relied upon.
@@ -128,9 +131,9 @@ From the results in our analysis, we recommend the following:
 
 There could be other variables that CTS would be interested in understanding to better understand bike rental mobility in the city.
 
-More recent data (2013-2022) could be concatenated to provide a better view of trends, as well as georgraphical data, pick up and drop off stations, bike routes, times etc.
+More recent data (2013-2022) could be concatenated to provide a better view of trends, as well as geographical data, pick up and drop off stations, bike routes, times etc.
 
-By understanding more intrisic data such as time of pick up vs. time of drop off we can better understand the trends and routes people take. This will give CTS a clearer view of which routes are busiest and where other public transport means are required (or reduced). 
+By understanding more intrinsic data such as time of pick up vs. time of drop off we can better understand the trends and routes people take. This will give CTS a clearer view of which routes are busiest and where other public transport means are required (or reduced). 
 
 Having a bigger picture of the landscape, we can drill down further. We hypothesis that there may be a correlation between certain bike rental locations, for example, suburbs with bike routes, less parking, more narrow routes, high density and close to points of interest (shops, schools, parks etc.)are likely to have more rentals.
 
