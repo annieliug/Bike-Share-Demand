@@ -68,8 +68,6 @@ We validated our model for assumptions in regression and finally we made a predi
 
 ## Results
 
-Interpreting the results.
-
 ***
 
 Interpreting the results, we found that by Bike rentals are highest during warmer season (Spring and Summer), lowest during Winter.
